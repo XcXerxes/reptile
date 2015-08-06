@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GeoLocation</title>
+	<script>
+		if( navigator.geolocation ){
+            navigator.geolocation.getCurrentPosition(updateLocation, handleLocationError,{
+                // 指示浏览器获取高精度的位置，默认为false
+                enableHighAcuracy: true,
+                // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
+                timeout: 5000,
+                // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
+                maximumAge: 3000
+            });
+		}else{
+		    alert( "对不起，您的浏览器不支持html5定位");
+		}
+
+        function updateLocation(position) {
+            var coords = position.coords;
+            alert(coords.latitude);
+        }
+
+        function handleLocationError(error) {
+            switch(error.code){
+                case 0:
+                    alert("获取位置信息出错！");
+                    break;
+                case 1:
+                    alert("您设置了阻止该页面获取位置信息！");
+                    break;
+                case 2:
+                    alert("浏览器无法确定您的位置！");
+                    break;
+                case 3:
+                    alert("获取位置信息超时！");
+                    break;
+            }
+        }
+
+    </script>
+</head>
+<body>
+	
+</body>
+</html>
