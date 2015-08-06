@@ -201,6 +201,6 @@ app.get('/dili/detail/',function(req,res,next){
         });
 });
 
-app.listen(3000, function (req, res) {
+app.listen(80, function (req, res) {
     console.log('app server start 3000');
 });
