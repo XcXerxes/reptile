@@ -201,6 +201,7 @@ app.get('/dili/detail/',function(req,res,next){
         });
 });
 
+//heroku 是动态分配端口
 app.listen(process.env.PORT || 3000, function (req, res) {
     console.log('app server start 3000');
 });
